@@ -7,18 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F5FA9B22279459100ABFC8D /* UIViewController+Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FA9AE2279459100ABFC8D /* UIViewController+Permission.swift */; };
+		9F5FA9B32279459100ABFC8D /* PermissionManager+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FA9AF2279459100ABFC8D /* PermissionManager+Notification.swift */; };
+		9F5FA9B42279459100ABFC8D /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FA9B02279459100ABFC8D /* PermissionManager.swift */; };
+		9F5FA9B6227946A800ABFC8D /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FA9B5227946A800ABFC8D /* Contact.swift */; };
+		9F5FA9BC227C4E0500ABFC8D /* PermissionManager+Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FA9BB227C4E0500ABFC8D /* PermissionManager+Contacts.swift */; };
 		9F97737321FDF282006978A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F97737221FDF282006978A5 /* AppDelegate.swift */; };
 		9F97737521FDF282006978A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F97737421FDF282006978A5 /* ViewController.swift */; };
 		9F97737821FDF282006978A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F97737621FDF282006978A5 /* Main.storyboard */; };
 		9F97737A21FDF283006978A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F97737921FDF283006978A5 /* Assets.xcassets */; };
 		9F97737D21FDF283006978A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F97737B21FDF283006978A5 /* LaunchScreen.storyboard */; };
 		9F97738521FDF2A2006978A5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F97738421FDF2A2006978A5 /* README.md */; };
-		9F97738921FDF34C006978A5 /* PermissionManager+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F97738721FDF34C006978A5 /* PermissionManager+Notification.swift */; };
-		9F97738A21FDF34C006978A5 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F97738821FDF34C006978A5 /* PermissionManager.swift */; };
-		9F97738C21FDF40C006978A5 /* UIViewController+Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F97738B21FDF40C006978A5 /* UIViewController+Permission.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F5FA9AE2279459100ABFC8D /* UIViewController+Permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Permission.swift"; sourceTree = "<group>"; };
+		9F5FA9AF2279459100ABFC8D /* PermissionManager+Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PermissionManager+Notification.swift"; sourceTree = "<group>"; };
+		9F5FA9B02279459100ABFC8D /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
+		9F5FA9B5227946A800ABFC8D /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		9F5FA9BB227C4E0500ABFC8D /* PermissionManager+Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PermissionManager+Contacts.swift"; sourceTree = "<group>"; };
 		9F97736F21FDF282006978A5 /* PermissionManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PermissionManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F97737221FDF282006978A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F97737421FDF282006978A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,9 +34,6 @@
 		9F97737C21FDF283006978A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F97737E21FDF283006978A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F97738421FDF2A2006978A5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		9F97738721FDF34C006978A5 /* PermissionManager+Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PermissionManager+Notification.swift"; sourceTree = "<group>"; };
-		9F97738821FDF34C006978A5 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
-		9F97738B21FDF40C006978A5 /* UIViewController+Permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Permission.swift"; path = "../../Extensions/UI/UIViewController/UIViewController+Permission.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F5FA9AC2279459100ABFC8D /* PermissionManager */ = {
+			isa = PBXGroup;
+			children = (
+				9F5FA9AE2279459100ABFC8D /* UIViewController+Permission.swift */,
+				9F5FA9B02279459100ABFC8D /* PermissionManager.swift */,
+				9F5FA9AF2279459100ABFC8D /* PermissionManager+Notification.swift */,
+				9F5FA9BB227C4E0500ABFC8D /* PermissionManager+Contacts.swift */,
+			);
+			path = PermissionManager;
+			sourceTree = "<group>";
+		};
 		9F97736621FDF282006978A5 = {
 			isa = PBXGroup;
 			children = (
@@ -65,24 +80,14 @@
 			children = (
 				9F97737221FDF282006978A5 /* AppDelegate.swift */,
 				9F97737421FDF282006978A5 /* ViewController.swift */,
-				9F97738621FDF34C006978A5 /* PermissionManager */,
+				9F5FA9B5227946A800ABFC8D /* Contact.swift */,
+				9F5FA9AC2279459100ABFC8D /* PermissionManager */,
 				9F97737621FDF282006978A5 /* Main.storyboard */,
 				9F97737921FDF283006978A5 /* Assets.xcassets */,
 				9F97737B21FDF283006978A5 /* LaunchScreen.storyboard */,
 				9F97737E21FDF283006978A5 /* Info.plist */,
 			);
 			path = PermissionManager;
-			sourceTree = "<group>";
-		};
-		9F97738621FDF34C006978A5 /* PermissionManager */ = {
-			isa = PBXGroup;
-			children = (
-				9F97738821FDF34C006978A5 /* PermissionManager.swift */,
-				9F97738721FDF34C006978A5 /* PermissionManager+Notification.swift */,
-				9F97738B21FDF40C006978A5 /* UIViewController+Permission.swift */,
-			);
-			name = PermissionManager;
-			path = ../../../../../Projects/Welo/Library/Managers/PermissionManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,11 +162,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F97738C21FDF40C006978A5 /* UIViewController+Permission.swift in Sources */,
-				9F97738921FDF34C006978A5 /* PermissionManager+Notification.swift in Sources */,
 				9F97737521FDF282006978A5 /* ViewController.swift in Sources */,
-				9F97738A21FDF34C006978A5 /* PermissionManager.swift in Sources */,
+				9F5FA9BC227C4E0500ABFC8D /* PermissionManager+Contacts.swift in Sources */,
+				9F5FA9B42279459100ABFC8D /* PermissionManager.swift in Sources */,
+				9F5FA9B32279459100ABFC8D /* PermissionManager+Notification.swift in Sources */,
 				9F97737321FDF282006978A5 /* AppDelegate.swift in Sources */,
+				9F5FA9B22279459100ABFC8D /* UIViewController+Permission.swift in Sources */,
+				9F5FA9B6227946A800ABFC8D /* Contact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,16 +315,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q8466Z6RB2;
 				INFOPLIST_FILE = PermissionManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Shivank.PermissionManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adglobal360.PermissionManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "WildCard Dev";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -328,14 +335,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PermissionManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Shivank.PermissionManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adglobal360.PermissionManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
