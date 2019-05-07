@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-extension PermissionManager: UNUserNotificationCenterDelegate {
+extension PermissionManager {
     
     //MARK:- Notification Methods
     internal func registerUNUserNotification() {
@@ -22,7 +22,7 @@ extension PermissionManager: UNUserNotificationCenterDelegate {
                     self.registerRemoteNotification()
                 }
                 else {
-                    self.notificationDelegate.requirePermission(PermissionType.permissionTypeNotification)
+                    self.notificationDelegate?.requirePermission(PermissionType.permissionTypeNotification)
                 }
             })
         } else {
@@ -39,18 +39,23 @@ extension PermissionManager: UNUserNotificationCenterDelegate {
         UIApplication.shared.unregisterForRemoteNotifications()
     }
     
+    
+}
+
+extension PermissionManager: UNUserNotificationCenterDelegate{
+    
     //MARK:- UNUserNotificationCenterDelegate
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         //Implentation notification when app is in foreground
+        self.notificationDelegate?.userNotificationWillPresent(notification, center: center)
         completionHandler(UNNotificationPresentationOptions.alert)
-//        performAutoTaskAfterNotification(userInfo: notification.request.content.userInfo as NSDictionary)
     }
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         //Handle notification recieve
-//        performTaskAfterNotification(userInfo: response.notification.request.content.userInfo as NSDictionary)
+        self.notificationDelegate?.userNotificationDidReceive(response, center: center)
     }
 }

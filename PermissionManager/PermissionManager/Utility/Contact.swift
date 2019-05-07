@@ -9,7 +9,7 @@
 import UIKit
 import Contacts
 
-class Contact: NSObject {
+public class Contact: NSObject {
     
     var name: String!
     var email: String?

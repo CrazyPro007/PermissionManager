@@ -11,11 +11,6 @@ import Contacts
 
 extension UIResponder {
     
-    private func askNotificationPermission() {
-        
-        PermissionManager.sharedInstance.setPermissionType(permission: .permissionTypeNotification)
-    }
-    
     private func permissionMessage(_ aMessage: String) {
         
         autoreleasepool{
@@ -48,45 +43,21 @@ extension UIResponder {
         setContactsPermission()
     }
     
-    public func setNotificationPermission(){
+    public func setNotificationPermission(_ delegate: NotificationDelegate? = nil){
         
-        PermissionManager.sharedInstance.notificationDelegate = self
+        PermissionManager.sharedInstance.notificationDelegate = delegate
         PermissionManager.sharedInstance.setPermissionType(permission: .permissionTypeNotification)
     }
     
-    public func setContactsPermission(){
+    public func setContactsPermission(_ delegate: ContactsDelegate? = nil){
         
-        PermissionManager.sharedInstance.contactsDelegate = self
+        PermissionManager.sharedInstance.contactsDelegate = delegate
         PermissionManager.sharedInstance.setPermissionType(permission: .permissionTypeContacts)
     }
-}
-
-extension UIResponder: PermissionManagerDelegate{
     
-    func requirePermission(_ aPermissionType: PermissionType) {
+    public func setLocationPermission(_ delegate: LocationDelegate? = nil){
         
-        DispatchQueue.main.async {
-            switch aPermissionType {
-            case .permissionTypeNotification:
-                self.permissionMessage("We need notification permission")
-            case .permissionTypeContacts:
-                self.permissionMessage("We need contacts permission")
-            default:
-                break
-            }
-        }
+        PermissionManager.sharedInstance.locationDelegate = delegate
+        PermissionManager.sharedInstance.setPermissionType(permission: .permissionTypeLocation)
     }
 }
-
-extension UIResponder: NotificationDelegate{
-    
-    
-}
-
-extension UIResponder: ContactsDelegate{
-    
-    func getContacts(contacts: [Contact]) {
-        
-    }
-}
-

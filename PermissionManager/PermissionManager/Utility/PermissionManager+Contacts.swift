@@ -20,38 +20,38 @@ extension PermissionManager{
             retrieveContacts{(success, contacts) in
                 if contacts != nil{
                     //self.contacts = contacts!
-                    self.contactsDelegate.getContacts(contacts: contacts!)
+                    self.contactsDelegate?.getContacts(contacts: contacts!)
                 }else{
                     let contacts:[Contact] = []
-                    self.contactsDelegate.getContacts(contacts: contacts)
+                    self.contactsDelegate?.getContacts(contacts: contacts)
                 }
             }
             break
         case .denied:
             //user has denied access
-            self.contactsDelegate.requirePermission(PermissionType.permissionTypeContacts)
+            self.contactsDelegate?.requirePermission(PermissionType.permissionTypeContacts)
             break
         case .notDetermined:
             //need to ask for permission
             self.contactsStore.requestAccess(for: CNEntityType.contacts){(granted,error) in
                 if !granted{
                     //ask again
-                    self.contactsDelegate.requirePermission(PermissionType.permissionTypeContacts)
+                    self.contactsDelegate?.requirePermission(PermissionType.permissionTypeContacts)
                 }
                 self.retrieveContacts{(success, contacts) in
                     if contacts != nil{
                        // self.contacts = contacts!
-                        self.contactsDelegate.getContacts(contacts: contacts!)
+                        self.contactsDelegate?.getContacts(contacts: contacts!)
                     }else{
                         let contacts:[Contact] = []
-                        self.contactsDelegate.getContacts(contacts: contacts)
+                        self.contactsDelegate?.getContacts(contacts: contacts)
                     }
                 }
             }
             break
         case .restricted:
             //user has restricted the access
-            self.contactsDelegate.requirePermission(PermissionType.permissionTypeContacts)
+            self.contactsDelegate?.requirePermission(PermissionType.permissionTypeContacts)
             break
         }
     }
@@ -67,7 +67,7 @@ extension PermissionManager{
                 }
             })            
             completion(true, contacts)
-        }catch(let error){
+        }catch(let _){
             completion(false, nil)
         }
     }

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'SAPermissionManager'
-s.version          = '1.2.2'
+s.version          = '1.2.5'
 s.summary          = 'Permission Library'
 s.swift_version    = '4.2'
 

@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import CoreLocation
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setNotificationPermission(self)
+        setLocationPermission(self)
+        setContactsPermission(self)
         return true
     }
 
@@ -40,7 +44,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
+extension AppDelegate: LocationDelegate{
+    
+    func requirePermission(_ aPermissionType: PermissionType) {
+        
+    }
+    
+    func didUpdateLocations(_ locations: [CLLocation], _ manager: CLLocationManager) {
+        
+    }
+    
+    func didFailWithError(_ error: Error, _ manager: CLLocationManager) {
+        
+    }
+    
+    func didDetermineState(_ state: CLRegionState, _region: CLRegion, _ manager: CLLocationManager) {
+        
+    }
+    
+    func didChangeAuthorizationStatus(_ status: CLAuthorizationStatus, _ manager: CLLocationManager) {
+        
+    }
+}
+
+extension AppDelegate: NotificationDelegate{
+    
+    func userNotificationWillPresent(_ notification: UNNotification, center: UNUserNotificationCenter) {
+        
+    }
+    
+    func userNotificationDidReceive(_ response: UNNotificationResponse, center: UNUserNotificationCenter) {
+        
+    }
+}
+
+extension AppDelegate: ContactsDelegate{
+    
+    func getContacts(contacts: [Contact]) {
+        
+    }
+}
