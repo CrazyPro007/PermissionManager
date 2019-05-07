@@ -29,7 +29,7 @@ extension UIResponder {
             //dismiss UIAlertController
         }
         alertController.addAction(discardAlert)
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate, let aController = appDelegate.window?.rootViewController{
+        if let appDelegate = UIApplication.shared.delegate as? UIApplicationDelegate, let aController = appDelegate.window?.rootViewController{
             aController.present(alertController, animated: true) {
                 //present UIAlertController
             }
