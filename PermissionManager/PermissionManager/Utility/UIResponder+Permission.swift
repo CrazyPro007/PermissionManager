@@ -18,19 +18,25 @@ extension UIResponder {
     
     private func permissionMessage(_ aMessage: String) {
         
-        let alertController: UIAlertController = UIAlertController(title: nil, message: aMessage, preferredStyle: .alert)
-        let proceedAlert: UIAlertAction = UIAlertAction(title: "Proceed", style: .default) { (action) in
-            if let aURL = URL(string: UIApplication.openSettingsURLString){
-                UIApplication.shared.open(aURL, options: [:], completionHandler: nil)
+        autoreleasepool{
+            let alertController: UIAlertController = UIAlertController(title: nil, message: aMessage, preferredStyle: .alert)
+            let proceedAlert: UIAlertAction = UIAlertAction(title: "Proceed", style: .default) { (action) in
+                if let aURL = URL(string: UIApplication.openSettingsURLString){
+                    UIApplication.shared.open(aURL, options: [:], completionHandler: nil)
+                }
             }
-        }
-        alertController.addAction(proceedAlert)
-        let discardAlert: UIAlertAction = UIAlertAction(title: "Discard", style: .cancel) { (action) in
-            //dismiss UIAlertController
-        }
-        alertController.addAction(discardAlert)
-        if let appDelegate = UIApplication.shared.delegate as? UIApplicationDelegate, let aController = appDelegate.window?.rootViewController{
-            aController.present(alertController, animated: true) {
+            alertController.addAction(proceedAlert)
+            let discardAlert: UIAlertAction = UIAlertAction(title: "Discard", style: .cancel) { (action) in
+                //dismiss UIAlertController
+            }
+            alertController.addAction(discardAlert)
+            let win = UIWindow(frame: UIScreen.main.bounds)
+            let vc = UIViewController()
+            vc.view.backgroundColor = .clear
+            win.rootViewController = vc
+            win.windowLevel = UIWindow.Level.alert + 1
+            win.makeKeyAndVisible()
+            vc.present(alertController, animated: true) {
                 //present UIAlertController
             }
         }
