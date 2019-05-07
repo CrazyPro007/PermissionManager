@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9F69A8AB228009D4008722B9 /* PermissionManager+Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F69A8A6228009D4008722B9 /* PermissionManager+Contacts.swift */; };
-		9F69A8AC228009D4008722B9 /* UIViewController+Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F69A8A7228009D4008722B9 /* UIViewController+Permission.swift */; };
 		9F69A8AD228009D4008722B9 /* PermissionManager+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F69A8A8228009D4008722B9 /* PermissionManager+Notification.swift */; };
 		9F69A8AE228009D4008722B9 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F69A8A9228009D4008722B9 /* PermissionManager.swift */; };
 		9F69A8AF228009D4008722B9 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F69A8AA228009D4008722B9 /* Contact.swift */; };
@@ -17,11 +16,11 @@
 		9F97737A21FDF283006978A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F97737921FDF283006978A5 /* Assets.xcassets */; };
 		9F97737D21FDF283006978A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F97737B21FDF283006978A5 /* LaunchScreen.storyboard */; };
 		9F97738521FDF2A2006978A5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F97738421FDF2A2006978A5 /* README.md */; };
+		9F9E496D22815F5F0090A292 /* UIResponder+Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9E496C22815F5F0090A292 /* UIResponder+Permission.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9F69A8A6228009D4008722B9 /* PermissionManager+Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PermissionManager+Contacts.swift"; sourceTree = "<group>"; };
-		9F69A8A7228009D4008722B9 /* UIViewController+Permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Permission.swift"; sourceTree = "<group>"; };
 		9F69A8A8228009D4008722B9 /* PermissionManager+Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PermissionManager+Notification.swift"; sourceTree = "<group>"; };
 		9F69A8A9228009D4008722B9 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		9F69A8AA228009D4008722B9 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -32,6 +31,7 @@
 		9F97737C21FDF283006978A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F97737E21FDF283006978A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F97738421FDF2A2006978A5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9F9E496C22815F5F0090A292 /* UIResponder+Permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+Permission.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,10 +48,10 @@
 		9F69A8A5228009D4008722B9 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				9F69A8A6228009D4008722B9 /* PermissionManager+Contacts.swift */,
-				9F69A8A7228009D4008722B9 /* UIViewController+Permission.swift */,
-				9F69A8A8228009D4008722B9 /* PermissionManager+Notification.swift */,
 				9F69A8A9228009D4008722B9 /* PermissionManager.swift */,
+				9F69A8A8228009D4008722B9 /* PermissionManager+Notification.swift */,
+				9F69A8A6228009D4008722B9 /* PermissionManager+Contacts.swift */,
+				9F9E496C22815F5F0090A292 /* UIResponder+Permission.swift */,
 				9F69A8AA228009D4008722B9 /* Contact.swift */,
 			);
 			path = Utility;
@@ -164,7 +164,7 @@
 				9F69A8AF228009D4008722B9 /* Contact.swift in Sources */,
 				9F69A8AE228009D4008722B9 /* PermissionManager.swift in Sources */,
 				9F69A8AB228009D4008722B9 /* PermissionManager+Contacts.swift in Sources */,
-				9F69A8AC228009D4008722B9 /* UIViewController+Permission.swift in Sources */,
+				9F9E496D22815F5F0090A292 /* UIResponder+Permission.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

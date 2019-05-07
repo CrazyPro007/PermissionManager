@@ -1,24 +1,23 @@
 //
-//  UIViewController+Permission.swift
-//  PermissionManager
+//  UIApplication+Permission.swift
+//  Pods-TestPod
 //
-//  Created by Shivank Agarwal on 27/01/19.
-//  Copyright © 2019 Shivank Agarwal. All rights reserved.
+//  Created by Shivank Agarwal on 07/05/19.
 //
 
 import UIKit
 import UserNotifications
 import Contacts
 
-extension UIViewController {
-
+extension UIResponder {
+    
     private func askNotificationPermission() {
-
+        
         PermissionManager.sharedInstance.setPermissionType(permission: .permissionTypeNotification)
     }
-
+    
     private func permissionMessage(_ aMessage: String) {
-
+        
         let alertController: UIAlertController = UIAlertController(title: nil, message: aMessage, preferredStyle: .alert)
         let proceedAlert: UIAlertAction = UIAlertAction(title: "Proceed", style: .default) { (action) in
             if let aURL = URL(string: UIApplication.openSettingsURLString){
@@ -30,31 +29,33 @@ extension UIViewController {
             //dismiss UIAlertController
         }
         alertController.addAction(discardAlert)
-        present(alertController, animated: true) {
-            //present UIAlertController
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate, let aController = appDelegate.window?.rootViewController{
+            aController.present(alertController, animated: true) {
+                //present UIAlertController
+            }
         }
     }
-
-    func setPermissionManager() {
+    
+    public func setPermissionManager() {
         
         setNotificationPermission()
         setContactsPermission()
     }
-
-    internal func setNotificationPermission(){
+    
+    public func setNotificationPermission(){
         
         PermissionManager.sharedInstance.notificationDelegate = self
         PermissionManager.sharedInstance.setPermissionType(permission: .permissionTypeNotification)
     }
     
-    internal func setContactsPermission(){
+    public func setContactsPermission(){
         
         PermissionManager.sharedInstance.contactsDelegate = self
         PermissionManager.sharedInstance.setPermissionType(permission: .permissionTypeContacts)
     }
 }
 
-extension UIViewController: PermissionManagerDelegate{
+extension UIResponder: PermissionManagerDelegate{
     
     func requirePermission(_ aPermissionType: PermissionType) {
         
@@ -67,18 +68,19 @@ extension UIViewController: PermissionManagerDelegate{
             default:
                 break
             }
-        }    
+        }
     }
 }
 
-extension UIViewController: NotificationDelegate{
+extension UIResponder: NotificationDelegate{
     
     
 }
 
-extension UIViewController: ContactsDelegate{
+extension UIResponder: ContactsDelegate{
     
     func getContacts(contacts: [Contact]) {
         
     }
 }
+
