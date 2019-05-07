@@ -12,8 +12,7 @@ import Contacts
 extension UIResponder {
     
     private func permissionMessage(_ aMessage: String) {
-        
-        autoreleasepool{
+        autoreleasepool {
             let alertController: UIAlertController = UIAlertController(title: nil, message: aMessage, preferredStyle: .alert)
             let proceedAlert: UIAlertAction = UIAlertAction(title: "Proceed", style: .default) { (action) in
                 if let aURL = URL(string: UIApplication.openSettingsURLString){
@@ -38,25 +37,21 @@ extension UIResponder {
     }
     
     public func setPermissionManager() {
-        
         setNotificationPermission()
         setContactsPermission()
     }
     
-    public func setNotificationPermission(_ delegate: NotificationDelegate? = nil){
-        
+    public func setNotificationPermission(_ delegate: NotificationDelegate? = nil) {
         PermissionManager.sharedInstance.notificationDelegate = delegate
         PermissionManager.sharedInstance.setPermissionType(permission: .permissionTypeNotification)
     }
     
-    public func setContactsPermission(_ delegate: ContactsDelegate? = nil){
-        
+    public func setContactsPermission(_ delegate: ContactsDelegate? = nil) {
         PermissionManager.sharedInstance.contactsDelegate = delegate
         PermissionManager.sharedInstance.setPermissionType(permission: .permissionTypeContacts)
     }
     
-    public func setLocationPermission(_ delegate: LocationDelegate? = nil){
-        
+    public func setLocationPermission(_ delegate: LocationDelegate? = nil) {
         PermissionManager.sharedInstance.locationDelegate = delegate
         PermissionManager.sharedInstance.setPermissionType(permission: .permissionTypeLocation)
     }

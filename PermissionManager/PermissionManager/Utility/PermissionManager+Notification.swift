@@ -13,7 +13,6 @@ extension PermissionManager {
     
     //MARK:- Notification Methods
     internal func registerUNUserNotification() {
-        
         if #available(iOS 10.0, *) {
             let userNotificationCenter = UNUserNotificationCenter.current()
             userNotificationCenter.delegate = self
@@ -31,21 +30,21 @@ extension PermissionManager {
     }
     
     private func registerRemoteNotification() {
-        
-        UIApplication.shared.registerForRemoteNotifications()
+        DispatchQueue.main.async {
+           UIApplication.shared.registerForRemoteNotifications()
+        }
     }
     
     private func deregisterRemoteNotification() {
-        UIApplication.shared.unregisterForRemoteNotifications()
+        DispatchQueue.main.async {
+            UIApplication.shared.unregisterForRemoteNotifications()
+        }
     }
-    
-    
 }
 
 extension PermissionManager: UNUserNotificationCenterDelegate{
     
     //MARK:- UNUserNotificationCenterDelegate
-    
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         //Implentation notification when app is in foreground

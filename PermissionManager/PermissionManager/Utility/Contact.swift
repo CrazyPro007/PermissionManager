@@ -21,9 +21,7 @@ public class Contact: NSObject {
         self.email = email
         self.image = image
     }
-    
-    init?(contact :CNContact){
-        
+    init?(contact :CNContact) {
         if !contact.isKeyAvailable(CNContactGivenNameKey) && !contact.isKeyAvailable(CNContactFamilyNameKey){
             return nil
         }
@@ -31,11 +29,9 @@ public class Contact: NSObject {
         if contact.isKeyAvailable(CNContactEmailAddressesKey){
             
             for emails in contact.emailAddresses{
-                if let properEmail = emails.value as? String{
-                    if properEmail.isValidEmail(){
-                        self.email = properEmail
-                        break
-                    }
+                if (emails.value as String).isValidEmail(){
+                    self.email = emails.value as String
+                    break
                 }
             }
         }
@@ -57,7 +53,6 @@ extension String {
      - returns: A Bool return true if string has valid email otherwise false.
      */
     func isValidEmail() -> Bool {
-        
         let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailFormat)
         return emailPredicate.evaluate(with: self)

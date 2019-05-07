@@ -12,7 +12,6 @@ import CoreLocation
 extension PermissionManager{
     
     func initLocation() {
-        
         DispatchQueue.main.async {
             self.locationManager.delegate = self
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
